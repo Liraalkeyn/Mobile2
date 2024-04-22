@@ -4,9 +4,40 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Mobile2"
+        xmlns:viewmodel="clr-namespace:Mobile2.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="500" ResizeMode="NoResize">
+    
+    <Window.DataContext>
+        
+        <viewmodel:ViewModel/>
+        
+    </Window.DataContext>
+    
+        <Grid Background="White">
+            
+            <ListView Width="500" Height="500" ItemsSource="{Binding users}">
+                
+                <ListView.View>
+                    
+                    <GridView>
+                    
+                        <GridViewColumn Header="UserID" DisplayMemberBinding="{Binding UserId }"></GridViewColumn>
+                        
+                        <GridViewColumn Header="FirstName" DisplayMemberBinding="{Binding FirstName}"></GridViewColumn>
+                        
+                        <GridViewColumn Header="Birth" DisplayMemberBinding="{Binding Birth}"></GridViewColumn>
+                        
+                        <GridViewColumn Header="Patronymic" DisplayMemberBinding="{Binding Patronymic}"></GridViewColumn>
+                        
+                        <GridViewColumn Header="LastName" DisplayMemberBinding="{Binding LastName}"></GridViewColumn>
+                    
+                    </GridView>
+                    
+                </ListView.View>
+                
+            </ListView>
+            
+        </Grid>
 
-    </Grid>
 </Window>
